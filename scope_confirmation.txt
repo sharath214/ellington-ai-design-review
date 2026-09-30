@@ -1,0 +1,66 @@
+Design Review Module
+Understanding & Client Input Checklist
+Based on the discussion for Design & Development Intelligence
+Purpose: This document captures our understanding of the agreed Design Review scope and lists the information/materials pending from Ellington before detailed solution design and model validation can progress.
+1. Our Understanding of the Agreed Scope
+The initial implementation will focus only on the Design Review module covering Stages 3–6 of the wider design and development lifecycle.
+The priority use case is to reduce the current manual and error-prone review effort for Concept Design, Schematic Design and Detail Design submissions.
+Other stages of the broader lifecycle are deferred for now, including Stage 7 (Project Launch Preparation), Stage 8 (Contractor Tender) and Stage 10 (Post-Contract Parking).
+The AI will perform a first-pass compliance and consistency review. It will flag issues for human review; it will not independently approve drawings or issue resubmission instructions.
+2. Design Review Inputs
+Design submission formats: CAD, BIM and PDF.
+Typical file size discussed: Approximately 1 MB per drawing.
+Primary review objective: Identify non-compliances, inconsistencies and deviations before the development team sends consolidated comments back to consultants.
+3. Reference Sources the AI Must Check Against
+4. Project Context / Cross-Discipline Memory
+The AI must maintain project context across multiple disciplinary uploads rather than treating each submission in isolation.
+Architecture, landscape and other discipline packages must be compared with earlier approved or submitted information so that design intent is carried through.
+Example discussed: if an external stair exists in the architecture package but is missing from the landscape drawings, the AI should flag the inconsistency.
+This project memory is a core requirement for the Design Review solution, not an optional enhancement.
+5. Expected Output and Review Workflow
+The user uploads a design submission in the supported format.
+The AI performs a first-pass review against the relevant DCR, Ellington Design Standards and approved architectural master plan.
+The AI also checks the submission against available project context and previous cross-disciplinary information.
+Potential non-compliances or inconsistencies are logged as flagged issues.
+The development team reviews the flagged issues and decides what should be communicated to the consultant.
+No drawing approval, rejection or resubmission action is completed by the AI without human sign-off.
+6. Agreed Development Approach
+Use a phased and iterative implementation approach rather than attempting the full solution in one release.
+Start with UI/UX design and a workflow prototype so the process can be validated before deeper model development.
+Use weekly demo and feedback sessions between Zeero and Ellington to refine the workflow, improve model output and reduce irrelevant or noisy findings.
+The target is a refined and scalable solution that can handle the project data and review workflow more effectively than generic AI tools with file-size/context limitations or high-noise output.
+7. Responsibilities Understood from the Meeting
+8. Pending Checklist from Ellington
+The following items are pending from the client side based on the meeting discussion:
+9. Items to Confirm During the Next Client Review
+Confirm that Stages 3–6 remain the only scope for the initial implementation.
+Confirm the exact supported drawing/document formats required for the first release and whether native CAD/BIM processing is expected from day one or introduced iteratively.
+Confirm which localities/DCR variants are required for the first pilot.
+Confirm how the approved architectural master plan and subsequent discipline submissions will be versioned and identified by project.
+Confirm the required issue-report format and whether it must integrate with an existing Ellington system or can initially be produced within the prototype.
+Confirm the client reviewers responsible for validating AI findings and providing weekly feedback.
+10. Current Scope Boundaries
+The AI is an assistance and first-pass review tool; final design/compliance decisions remain with Ellington reviewers.
+The AI will flag potential issues but will not automatically approve a drawing, reject a submission or issue a resubmission.
+Deferred lifecycle stages are not included in the initial Design Review implementation unless the scope is formally expanded later.
+11. Immediate Next Step
+Ellington: Share the pending source documents and representative sample project material listed in Section 8.
+Zeero: Use the confirmed material to finalize the UI/UX workflow prototype, define the first-pass review output, and begin iterative validation through the agreed weekly feedback cycle.
+Reference Source | Purpose | Understanding
+Dubai Design Code (DCR) | Regulatory / locality-specific compliance | The applicable design code may differ by project locality, for example JLT versus Business Bay.
+Ellington Design Standards | Internal company design standards | The AI should check submissions against Ellington's company-wide design guidelines.
+Approved Architectural Master Plan | Project-specific design consistency | The approved architectural master plan is the primary reference for maintaining project design intent and cross-discipline consistency.
+Owner | Responsibility | Status
+Zeero | Prepare UI/UX design and workflow prototype. | To be started
+Zeero | Prepare a checklist summarizing the agreed Design Review requirements for client review. | Covered in this document
+Ellington | Provide the required regulatory, internal-standard and sample design source material. | Pending
+Zeero + Ellington | Conduct weekly demos/feedback calls to refine the model and filter out noise. | To be scheduled during iteration
+# | Pending Item | Details / Expected Input | Owner / Status
+1 | Dubai Design Code (DCRs) | Applicable DCR documents for key project localities to be supported in the first phase. | Ellington / Michael - Pending
+2 | Ellington Design Standards | Current internal design standards/guidelines to use as a compliance reference. | Ellington / Michael - Pending
+3 | Sample Concept Design Submission | At least one representative Concept Design package for testing the initial workflow and first-pass review. | Ellington / Michael - Pending
+4 | Approved Architectural Master Plan | Approved master plan for the selected sample project so project-specific consistency can be tested. | Ellington - Pending
+5 | Cross-Discipline Sample Package | Related architecture and landscape submissions from the same project, where available, to validate cross-discipline project memory. | Ellington - Pending / Recommended
+6 | Locality / Project Mapping | Confirm which DCR applies to the sample project and how locality-specific rules should be selected for future projects. | Ellington - Pending clarification
+7 | Expected Review Output / Sample Comments | If available, provide current review comments or issue-log examples so AI output can align with the existing review process. | Ellington - Pending / Recommended
+8 | Weekly Review Participants | Confirm key client reviewers for weekly demos and validation of useful findings versus noise. | Ellington - Pending

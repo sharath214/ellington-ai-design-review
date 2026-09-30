@@ -1,0 +1,44 @@
+Minutes of Meeting
+1. Scope Clarification
+The meeting helped clarify the scope for Phase 1 and the future blue-collar recruitment requirement.
+Phase 1 – White-Collar Staffing
+The current scope is limited to integrating Zeero’s AI interview platform for white-collar staff hiring.
+Ellington will continue using PowerApps for job creation, approvals, and hiring workflow management.
+Zeero will support the AI interview assessment layer without disrupting Ellington’s existing hiring process.
+Phase 2 – Blue-Collar Recruitment
+The previously discussed end-to-end blue-collar recruitment scope is currently deferred.
+Mani will review the blue-collar recruitment strategy internally with Amit and Smita before taking this forward.
+2. Proposed Integration Workflow
+The agreed approach is a two-way API integration between PowerApps and Zeero.
+The expected flow is as follows:
+PowerApps will manage job creation and approval workflows.
+Zeero will pull job-related data from PowerApps through APIs.
+The Zeero portal will allow configuration of AI assessments for the respective jobs.
+Zeero will send assessment links to candidates.
+Candidates will complete the AI interview assessment on the Zeero platform.
+Zeero will push assessment results, scores, and analytics back to PowerApps through APIs.
+3. Technical Requirements and Dependencies
+PowerApps API Documentation
+Zeero needs the PowerApps API documentation to begin integration analysis.
+Currently, the API documentation is not available because the PowerApps hiring module is approximately 70% complete.
+API entities and objects are yet to be finalized.
+Due to this dependency, Zeero cannot provide technical estimates or begin integration development at this stage.
+Sandbox Access
+Zeero requested sandbox access to the PowerApps environment to start technical exploration.
+Wasim will check internally whether sandbox credentials can be shared with Zeero.
+Candidate Data Mapping
+A technical discussion is required to define a unique candidate identifier.
+This is important to ensure seamless data sync between PowerApps and Zeero, especially in cases where a candidate uses a different email ID to log in than the one used during invitation.
+Key Blocker
+The main blocker is the unavailability of finalized PowerApps API documentation and sandbox access. Zeero can begin integration analysis only once these are shared.
+Action Items
+Wasim
+Review the PowerApps hiring module with Smita on Monday.
+Share the PowerApps API documentation with Zeero by next week, subject to Smita’s feedback.
+Check internally on the feasibility of sharing PowerApps sandbox access.
+Wasim & Zeero Technical Team
+Schedule a technical call on Monday or Tuesday to define the API contract and data mapping strategy.
+Mani
+Review the blue-collar recruitment strategy with Amit and Smita before finalizing the next steps for Phase 2.
+Summary
+Phase 1 will focus only on white-collar AI interview integration with Ellington’s existing PowerApps hiring workflow. The blue-collar end-to-end recruitment scope is currently on hold. Zeero is awaiting PowerApps API documentation and sandbox access to proceed with integration planning and estimation.

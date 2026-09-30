@@ -1,0 +1,36 @@
+Meeting Summary: AI Initiative – Ellington Properties
+Date: June 08, 2026
+Duration: 11 minutes
+Meeting Purpose
+Align on the AI initiative's scope and immediate priorities.
+Key Takeaways
+Sales is the first priority
+Focus on documenting the sales process and Salesforce usage.
+Create 2–3 AI use cases based on the sales workflow.
+Voice Agent POC
+A 45-day proof-of-concept (POC) will evaluate a vendor for non-working-hour telesales.
+Amit will join to assess the technical and commercial viability of the vendor.
+Upcoming Meetings (Wednesday)
+3:00 PM: Kickoff for the voice agent POC.
+5:30 PM: Session to map the sales process.
+NDA Pending
+Amit to send the final NDA along with required details (name, license) by EOD today.
+Discussion Topics
+AI Initiative Strategy
+Priorities: Sales → Design & Development
+Phased Approach:
+Sales: Document process and Salesforce usage → define 2–3 AI use cases.
+Design & Development: Begin detailed process mapping in parallel.
+Scale: Apply the implementation model to other functions after initial learning.
+Voice Agent POC
+Goal: Supplement telesales during non-working hours.
+Vendor: Selected after vetting ~15–20 options over the past year.
+Timeline: 45-day POC starting this month to coincide with Genesys inbound launch.
+Rationale: Evaluate technology and commercial terms before committing.
+Amit's Role: Participate in POC meetings and assess the feasibility of a custom solution (e.g., Amazon Connect) if vendor terms are unfavorable.
+Next Steps / Action Items
+Owner | Action
+Amit | Send final NDA and required details by EOD today.
+Angelo | 1. Schedule 3 PM Wednesday kickoff for voice agent POC with Waseem.
+ | 2. Prepare to present high-level sales process and Salesforce usage at 5:30 PM meeting.
+Manivannan | Invite Amit to both Wednesday meetings.

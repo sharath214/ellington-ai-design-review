@@ -1,0 +1,189 @@
+AI Design & Development Opportunities
+Process Definition Document
+Design process automation & intelligence — feature spec and delivery plan for Ellington Properties
+1. Overview
+Ellington Properties has mandated Wissda to lead a company-wide AI transformation. This document defines the AI Design & Development feature set: AI-assisted feasibility analysis, RFP and consultant management, design review, contractor tendering, and construction/shop-drawing workflows. The system operates alongside Ellington's existing tools — Salesforce, CAD/BIM platforms, and DocuSign — as an intelligent assistant to Design Managers, automating retrieval, validation, and compliance checking while human approval is preserved at every design checkpoint.
+2. Scope & Assumptions
+In scope
+Stage 1 — Feasibility Study: authority-specific DCR lookup, feasibility template auto-completion, executive go/no-go dashboard.
+Stage 2 — RFP & Consultant Appointment: RFP auto-generation, PTC (post-tender clarification) logging and response tracking.
+Stages 3–6 — Design Reviews (Concept → Tender Package): AI-assisted first-pass compliance review, design comment tracking, compliance scoring and resubmission triggers, design change impact assessment.
+Stage 7 — Project Launch Preparation: sellable-area data sync to Salesforce, marketing-material coordination tracker, target cost-per-sqft publication.
+Stage 8 — Contractor Tender & Handover: contractor evaluation scoring, design intent handover package compilation.
+Stage 9 — Construction & Shop Drawings: construction drawing validation against approved design, shop drawing review workflow.
+Stage 10 — Post-Contract & Parking Inventory: RFI/shop-drawing decision logging, extra parking-bay inventory tracking in Salesforce.
+Out of scope
+Not: autonomous design approval or rejection — every compliance flag, resubmission trigger, and contractor score is confirmed by a human reviewer before action is taken.
+Not: authoring or editing drawings inside CAD/BIM systems — the AI reads, compares, and validates; it does not modify drawing files.
+Not: awarding or disqualifying contractors, or negotiating tender terms — evaluation scoring is advisory input to the procurement decision only.
+Not: legal or contractual interpretation of RFP, tender, or consultant agreement terms.
+Not: changing Salesforce's existing project ownership, assignment, or approval-routing logic.
+Assumptions & dependencies
+Ellington provides Salesforce sandbox access (API credentials, object/field permissions) at kickoff.
+Ellington provides CAD/BIM system access with file retrieval, comparison, and export permissions.
+Ellington provides authoritative, version-controlled Dubai Design Code datasets (DM, DDA, DSO) and internal brand-standards documentation.
+Historical project data (unit mixes, rental yields, cost benchmarks) is accessible via Salesforce.
+DocuSign credentials are provided for contract- and handover-stage workflows.
+Design Managers remain the sole approval authority at every checkpoint; the AI is not granted write-approval rights in Salesforce.
+3. Feature Areas
+Each stage below is defined the same way a delivered AI agent would be: what it does, what triggers it, what it reads and writes, where the human checkpoint sits, and what it will never do.
+3.1 Stage 1 — Feasibility Study
+Feature detail
+3.2 Stage 2 — RFP & Consultant Appointment
+Feature detail
+3.3 Stages 3–6 — Design Reviews (Concept → Tender Package)
+Feature detail
+3.4 Stage 7 — Project Launch Preparation
+Feature detail
+3.5 Stage 8 — Contractor Tender & Handover
+Feature detail
+3.6 Stage 9 — Construction & Shop Drawings
+Feature detail
+3.7 Stage 10 — Post-Contract & Parking Inventory
+Feature detail
+4. Systems & Integration
+The Design AI system does not replace Salesforce, CAD/BIM, or DocuSign — it orchestrates across them, writing every action back to Salesforce as the system of record.
+5.1 Salesforce (system of record)
+5.2 CAD/BIM Platform
+5.3 DocuSign
+5.4 Authority DCR Data Source
+5. Integration Data Flows
+6. Test Cases & Sign-off
+Open questions
+Happy Path
+Specific Handles
+Functional Tests
+Edge Cases
+Prepared by Wissda for Ellington Properties — Strictly Confidential
+Client | Ellington Properties Development LLC
+Project | AI Design & Development Opportunities — Design Process Automation & Intelligence
+Version | 1.0 — Draft for Review
+Date | 14 July 2026
+Status | In review
+Goal | How we'll know we hit it
+Reduce feasibility study errors and turnaround time by automating authority-specific DCR lookup and template completion. | Feasibility templates are auto-populated with current, correctly-mapped authority data (DM/DDA/DSO) and a go/no-go dashboard is generated for each new plot.
+Remove design-review bottlenecks by structuring first-pass compliance checking, comment tracking, and resubmission triggers. | Every submitted drawing package receives a first-pass compliance report and a logged Comments Tracker with reviewer/consultant status.
+Eliminate chaotic, error-prone project launch and post-contract data gaps. | RFPs, PTC responses, contractor evaluations, and shop-drawing approvals are logged and traceable in Salesforce with no manual re-entry mismatches.
+Primary goal | Automate DCR lookup, feasibility template population, and go/no-go dashboard generation for a proposed plot.
+Trigger | A new plot / land opportunity is registered in Salesforce with location and site data.
+Inputs / data sources | Plot coordinates and boundaries; Salesforce project record; authority DCR database (DM/DDA/DSO); historical project benchmarks.
+Outputs | Populated feasibility template; authority-specific DCR summary; go/no-go dashboard (P&L, ROI, cost metrics, risk flags).
+Human checkpoint | Design Manager reviews and approves the feasibility dashboard before any go/no-go decision is logged.
+Won't do | Never makes the go/no-go decision itself. Never applies a prior project's regulation set without flagging a version check. Never commits budget or timeline figures to Salesforce without sign-off.
+ID | Feature | What it does
+F1.1 | Authority-Specific DCR Lookup | Identify governing authority (DM/DDA/DSO) for plot location; retrieve version-controlled DCR requirements (heights, setbacks, parking); flag regulation changes since last project.
+F1.2 | Feasibility Template Autocompletion | Extract plot parameters and retrieve historical comparables; auto-populate unit-mix scenarios and cost benchmarks.
+F1.3 | Executive Summary Dashboard | Compile profit/loss, ROI, cost metrics; flag risks and compare against Ellington precedents.
+Primary goal | Auto-generate RFP documents from project data and automate PTC logging and response tracking.
+Trigger | Feasibility is approved and the project moves to consultant appointment.
+Inputs / data sources | Project scope, site data, regulatory requirements, RFP template; incoming PTC questions from bidding consultants.
+Outputs | Populated RFP document; consolidated PTC log; drafted standard responses; consultant notifications.
+Human checkpoint | Design Manager reviews and issues the RFP; final PTC responses are approved before being sent to consultants.
+Won't do | Never issues an RFP without review. Never sends a PTC response without approval. Never discloses one consultant's pricing or terms to another.
+ID | Feature | What it does
+F2.1 | Auto-Generate RFP | Retrieve project scope, site data and regulatory requirements; populate RFP template with site-specific detail.
+F2.2 | PTC Management | Capture and log PTC questions with timestamp and category; consolidate duplicates and draft standardized responses; track approval status and notify consultants.
+Primary goal | Run automated first-pass compliance checks, track comments, score compliance, and assess change impact.
+Trigger | A new drawing package is submitted for review at any design stage.
+Inputs / data sources | Design drawings (CAD/BIM); Dubai design codes; Ellington brand standards; prior comment history; project cost/schedule model.
+Outputs | Compliance report with severity levels; Comments Tracker; compliance score; change-impact estimate (cost/schedule delta).
+Human checkpoint | All flagged non-compliances and resubmission triggers are confirmed by a reviewer before being communicated to the consultant.
+Won't do | Never approves or rejects a drawing. Never issues a resubmission notice without reviewer sign-off. Never presents a cost/schedule estimate as final — always labelled as AI-generated pending QS/PM validation.
+ID | Feature | What it does
+F3.1 | AI-Assisted First-Pass Design Review | Extract design drawing elements and check for non-compliances; flag setback violations, height exceedances, parking ratio issues; generate compliance report with severity levels.
+F3.2 | Design Comment Tracking | Log comments with reviewer, drawing reference, severity; auto-generate Comments Tracker spreadsheet; track consultant responses and flag overdue items.
+F3.3 | Compliance Score & Resubmission Trigger | Compute compliance % from review issues; auto-trigger resubmission if score falls below threshold.
+F3.4 | Design Change Impact Assessment | Query project cost model and schedule for downstream impacts; estimate cost delta and schedule impact.
+Primary goal | Coordinate the 4-week pre-launch marketing window, keep sellable-area figures synced to Salesforce, and publish the Finance-approved target cost per square foot so it stops moving.
+Trigger | Design layouts are frozen and the project enters the 4-week pre-launch marketing period.
+Inputs / data sources | Frozen layout set; surveyor sellable-area schedules; approved project budget/cost model; marketing asset requirement list.
+Outputs | Marketing-material coordination tracker; sellable-area figures synced to Salesforce; published target cost-per-sqft reference; launch-readiness checklist.
+Human checkpoint | Design Manager / Sales lead confirms sellable-area figures and the published cost-per-sqft target before release to the sales team.
+Won't do | Never overwrites a surveyor-verified sellable-area figure without a matched source reference. Never publishes a cost-per-sqft figure that Finance hasn't confirmed. Never marks a marketing asset “ready” without a corresponding approved layout.
+ID | Feature | What it does
+F4.1 | Sellable Area Sync | Pull surveyor sellable-area schedules and push one verified figure into Salesforce; flag any figure that doesn't match the frozen layout set, removing the manual re-entry step behind sales/document mismatches.
+F4.2 | Marketing Coordination Tracker | Track the 4-week pre-launch checklist (brochures, floor plans, pricing sheets, signage) against the frozen-layout trigger date; flag items at risk of missing launch.
+F4.3 | Target Cost-per-Sqft Publication | Retrieve the Finance-approved target cost per square foot and publish it as a single reference figure on the project record, replacing informal, undocumented communication.
+Primary goal | Score contractors on capability and delivery history; compile the design-intent handover package for the site team.
+Trigger | Design reaches tender package stage; contractor bids received.
+Inputs / data sources | Contractor credentials, performance history, financial records; approved design drawing set.
+Outputs | Contractor evaluation scorecard with flags; design intent handover package (notes, material specs, outstanding issues).
+Human checkpoint | Procurement / Design Manager confirms contractor scoring and reviews handover package completeness before release to the site team.
+Won't do | Never awards or disqualifies a contractor. Never releases a handover package with unresolved design issues without explicitly flagging them.
+ID | Feature | What it does
+F5.1 | Contractor Evaluation Scoring | Score on experience, team credentials, quality record; cross-check financial health and flag red flags.
+F5.2 | Design Intent Handover Package | Extract approved design intent from drawing set; compile critical design notes and material specs; list outstanding design issues or deferred decisions.
+Primary goal | Validate construction drawings against approved design and streamline shop-drawing review and approval tracking.
+Trigger | A shop drawing or construction drawing is submitted by the contractor.
+Inputs / data sources | Approved design drawings; incoming shop/construction drawings; discipline routing rules.
+Outputs | Drawing comparison report (dimension/material/system conflicts); routed shop drawings; approval-status tracker with overdue flags.
+Human checkpoint | The relevant design discipline lead approves or rejects each shop drawing; the AI only flags conflicts and manages routing/tracking.
+Won't do | Never approves a shop drawing. Never modifies the approved design baseline. Never silently resolves a flagged conflict.
+ID | Feature | What it does
+F6.1 | Construction Drawing Validation | Auto-compare dimensions, materials, systems; flag missing details and coordinate conflicts.
+F6.2 | Shop Drawing Review Workflow | Log incoming shop drawings with timestamp and type; distribute to relevant design disciplines; track approval status and flag overdue reviews.
+Primary goal | Log post-handover design decisions (RFIs, shop-drawing determinations) and track the pool of extra parking bays as managed, sellable inventory.
+Trigger | Project is handed over to the site team; RFIs and extra-bay allocation requests begin.
+Inputs / data sources | RFI log; shop-drawing decisions; approved parking allocation plan; sales requests for extra bays.
+Outputs | Searchable decision log linked to drawing/RFI reference; live extra-parking-bay inventory in Salesforce with allocation status.
+Human checkpoint | Design Manager confirms each logged decision is correctly attributed; Sales lead approves any extra-bay allocation before it is promised to a buyer.
+Won't do | Never allocates a parking bay without sales-lead confirmation of remaining inventory. Never overwrites a prior logged decision — corrections are appended, not replaced. Never promises inventory it cannot confirm is unallocated.
+ID | Feature | What it does
+F7.1 | Design Decision Log | Capture RFI responses and shop-drawing determinations with date, drawing reference, and decision owner; make historical decisions searchable by plot/unit.
+F7.2 | Parking Inventory Tracker | Maintain a live count of the extra parking-bay pool in Salesforce, updating on each allocation or release; flag over-allocation before a promise is made to a buyer.
+Setup | Native integration via Salesforce API against Ellington's existing project object model.
+Object model | Project / Opportunity, Feasibility Record, RFP, PTC Log, Design Review, Comment, Contractor Evaluation, Shop Drawing / Case.
+Authentication | API credentials and field permissions provided by Ellington IT at kickoff.
+Access level | Read on project, plot, and historical data; additive write on feasibility, RFP, review, evaluation, and drawing-tracking records. AI never changes project ownership or approval status.
+Provider / platform | « to be confirmed by Ellington »
+Setup | File retrieval and drawing-comparison API access to the design drawing repository.
+Authentication | Per platform's API documentation and credentials from Ellington's CAD/BIM administrator.
+Supported file formats | « to be confirmed — e.g. DWG, RVT, IFC »
+Setup | Contract and handover-stage document workflows only.
+Trigger points | RFP issuance, consultant appointment, contractor tender award, handover package sign-off.
+Authentication | « to be provided by Ellington »
+Source | DM / DDA / DSO regulatory datasets
+Update mechanism | « to be confirmed — manual refresh vs. authority feed »
+Owner | « to be provided by Ellington »
+What | How | When / trigger
+Project master | Additive update pulling location, scope, budget, timeline, and authority from Salesforce. | At feasibility stage creation.
+Authority regulations | Structured DCR data (setbacks, heights, parking) retrieved per plot's governing authority. | On feasibility lookup; re-checked on resubmission.
+Ellington standards | Materials, finishes, glazing, and brand guidelines referenced from design documentation. | During every design review pass.
+Historical data | Unit mixes, rental yields, and cost benchmarks pulled from Salesforce. | During feasibility auto-completion.
+Design drawings | Floor plans, sections, elevations, and details retrieved from CAD/BIM. | On drawing package submission.
+Review & comments | Compliance flags, Comments Tracker, and approval status written to Salesforce/CAD. | After each first-pass review.
+Contractor data | Credentials, performance, and contact info pulled from Salesforce for scoring. | At tender evaluation stage.
+Sellable area & marketing data | Surveyor sellable-area schedules and marketing checklist status synced to Salesforce. | During the 4-week pre-launch window.
+Parking inventory | Extra parking-bay pool and allocation status tracked in Salesforce. | At handover and on each allocation/release.
+Question | Owner / decision needed
+Compliance score threshold: what percentage triggers a mandatory resubmission, and does it vary by project type or design stage? | Ellington (Design)
+Authority regulation versioning: how are DM/DDA/DSO regulation updates communicated, and who confirms the DCR dataset is current? | Ellington
+CAD/BIM platform and file-format confirmation: which system(s) and formats must be supported for drawing comparison? | Ellington (IT / Design)
+Handover package sign-off: who is the named human checkpoint approver for the Stage 7 handover package — Design Manager or site team lead? | Ellington
+Contractor scoring weightings: what relative weight do experience, credentials, quality record, and financial health carry in the scorecard? | Ellington + Wissda
+# | Test case | Expected result
+H1 | Stage 1 — plot registered with complete site data; DCR lookup runs. | Correct governing authority identified; feasibility template auto-populated; dashboard generated.
+H2 | Stage 2 — RFP auto-generated from an approved feasibility record. | RFP populated with correct scope/site/regulatory data; routed to Design Manager for review before issue.
+H3 | Stages 3–6 — new drawing package submitted for first-pass review. | Compliance report generated with correctly flagged setback/height/parking issues and severity levels.
+H4 | Stages 3–6 — design comment logged and tracked to consultant response. | Comments Tracker updated; response status tracked; overdue items flagged.
+H5 | Stage 8 — contractor bid data submitted for evaluation. | Scorecard generated with correct experience, credentials, quality, and financial-health flags.
+H6 | Stage 9 — shop drawing submitted by contractor. | Drawing logged, routed to the correct discipline, and approval status tracked.
+H7 | Stage 7 — frozen layout triggers pre-launch window. | Sellable-area figures synced to Salesforce with no mismatch; marketing tracker generated; cost-per-sqft published.
+H8 | Stage 10 — RFI logged and extra parking bay requested post-handover. | Decision logged and searchable; parking inventory updated and allocation confirmed before promise to buyer.
+# | Test case | Expected result
+S1 | Plot spans an ambiguous authority boundary (e.g. DM/DDA overlap). | Agent flags the ambiguity and routes to the Design Manager for manual determination; does not guess.
+S2 | A regulation has been updated since the last comparable project was benchmarked. | Agent flags the discrepancy and requires reviewer acknowledgment before proceeding.
+S3 | Drawing submission is incomplete (missing required views or details). | Agent flags the missing elements; does not run a partial compliance check without noting the gap.
+S4 | Compliance score lands exactly at the resubmission threshold. | Resubmission trigger requires reviewer confirmation rather than firing fully automatically.
+S5 | Contractor financial data is unavailable or stale at scoring time. | Agent flags the record as insufficient data; does not assign a default score.
+S6 | Two stakeholders submit conflicting design change requests. | Agent logs both and escalates to the Design Manager; does not merge or silently prioritise one.
+# | Test case | Expected result
+F1 | Authority-specific DCR lookup for a given plot's coordinates. | Correct, current-version DCR requirements returned for the matched authority.
+F2 | Feasibility template auto-population from plot data and historical comparables. | Template fields correctly mapped; unit-mix scenarios and cost benchmarks populated.
+F3 | RFP auto-generation from project data. | RFP correctly populated with project-specific scope, site data, and regulatory requirements.
+F4 | Compliance score calculation. | Score matches a manually verified, severity-weighted formula.
+F5 | Shop drawing routing by discipline. | Submission correctly assigned to the relevant design discipline based on drawing type and metadata.
+# | Test case | Expected result
+E1 | Plot data is incomplete or malformed on submission. | Agent flags missing fields; does not proceed with feasibility auto-completion.
+E2 | CAD/BIM file format is unsupported. | Agent notifies the Design Manager and logs the drawing as pending manual review.
+E3 | Two consultants submit near-duplicate PTC questions worded differently. | Agent consolidates correctly without losing either question's original context in the log.

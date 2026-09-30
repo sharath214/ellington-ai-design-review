@@ -1,0 +1,154 @@
+Proposed AI Feature List – Ellington Properties
+1. Sales AI Agent – Phase 1 Priority
+1.1 Conversational Salesforce Assistant for Property Consultants
+An AI assistant that enables Property Consultants to retrieve Salesforce information through natural-language text queries.
+Key features:
+Retrieve lead profile summaries, including customer interest, budget, timeline, language preference, source and lead status.
+Display previous interactions, notes, appointments, and assigned Property Consultant details.
+Provide project information, unit details, payment plans, floor plans, and availability information.
+Support text-based queries.
+1.2 Smart Inventory Search
+Enable Property Consultants to find suitable units quickly based on a customer’s preferences.
+Key features:
+Search available inventory by project, unit type, budget, size, bedrooms, view, floor, and payment plan.
+Display matching inventory with key unit details.
+Compare multiple units for the customer.
+Identify alternative options when a requested unit is unavailable.
+Surface available extra parking bays where applicable.
+1.3 Sales Offer Generation
+Allow Property Consultants to generate customised sales offers directly through the AI assistant.
+Key features:
+Generate sales offers as PDF documents or shareable links.
+Apply approved discounts and payment-plan adjustments.
+Include selected unit details, price, payment schedule, and relevant terms.
+Trigger internal approval where discounts or adjustments exceed authorised limits.
+Maintain a record of generated offers in Salesforce.
+1.4 EOI Creation Assistance
+Support Property Consultants in creating Expression of Interest records more efficiently.
+Key features:
+Capture customer information conversationally.
+Pre-fill EOI fields using available lead and customer data.
+Support OCR extraction from uploaded customer documents where applicable.
+Create customer account records and required verification tasks for Sales Administration.
+Flag missing mandatory information before submission.
+1.5 Booking Creation and Approval Workflow
+Simplify booking creation while retaining required approval controls.
+Key features:
+Create booking records directly from the AI-assisted conversation.
+Support bookings with or without an existing EOI.
+Support joint buyer details.
+Validate mandatory booking information before submission.
+Trigger CEO or authorized approver workflows based on defined business rules.
+Notify Sales Administration and relevant stakeholders of booking status changes.
+1.6 Voice Agent for Non-Working-Hour Tele sales
+A voice AI agent to supplement tele sales operations outside normal working hours.
+Key features:
+Handle inbound and outbound customer calls outside working hours.
+Conduct initial lead qualification using predefined questions.
+Capture customer interest, preferred project, budget, timeline, and contact details.
+Categorise leads as Hot, Warm, or Cold.
+Create or update leads in Salesforce.
+Schedule callbacks or meetings for Property Consultants.
+Handle frequently asked questions using approved project and sales information.
+Escalate complex, negative, or sensitive conversations to a human team member.
+Provide call recordings, transcripts, summaries, and lead-disposition reports.
+2. Finance and Payment Support – Future Phase
+2.1 Proof of Payment Processing Support
+Improve the current manual process for allocating bank-transfer payments.
+Key features:
+Upload and read Proof of Payment screenshots.
+Extract payment details through OCR.
+Match available information with draft receipts, customer details, and booking records.
+Flag uncertain or unmatched payments for Finance review.
+Create a review queue for Finance users.
+Maintain an audit trail of payment allocation decisions.
+2.2 Payment Status Assistant
+Provide quick visibility into payment and booking financial status.
+Key features:
+Retrieve payment status for a booking.
+Show outstanding invoice amounts and payment due dates.
+Display down-payment, registration-fee, and administration-fee status.
+Identify pending payment actions before contract generation.
+Alert users when payment information is incomplete or requires Finance validation.
+3. Contract and Document Automation – Future Phase
+3.1 DocuSign Integration Support
+Support document generation and contract processing after payment approval.
+Key features:
+Retrieve contract and document status from DocuSign.
+Trigger generation of URC and SPA documents based on defined workflow conditions.
+Notify users when documents are ready for customer signature.
+Track pending, completed, rejected, or expired signature requests.
+Maintain document links and activity history within Salesforce.
+3.2 Customer Document Readiness Check
+Validate that required documents are available before progressing to the next sales stage.
+Key features:
+Check availability of mandatory customer documents.
+Identify missing, expired, or incomplete documents.
+Notify the responsible Property Consultant or Sales Administration team.
+Maintain a checklist of document-completion status.
+4. Design and Development AI – Future Phase
+4.1 Feasibility and Development Control Regulation Assistant
+Reduce risk in plot feasibility studies by centralizing authority-specific development rules.
+Key features:
+Maintain a searchable knowledge base of Development Control Regulations for relevant UAE authorities.
+Identify authority-specific rules for a selected plot.
+Highlight plot-specific parameters such as building height, setbacks, parking requirements, and allowable unit mix.
+Alert users when regulation information may be outdated or incomplete.
+Compare feasibility assumptions against previous projects.
+4.2 Portfolio Benchmarking for New Developments
+Help the Design team assess proposed project efficiency against Ellington’s existing portfolio.
+Key features:
+Compare proposed unit mix, efficiency, saleable area, parking ratio, and other key metrics with prior projects.
+Identify potential underperformance against benchmark projects.
+Generate summary reports for management review.
+Highlight areas requiring further feasibility validation.
+4.3 AI-Based Drawing Compliance Review
+Provide a first-pass review of design drawings against applicable standards.
+Key features:
+Review drawings against Dubai design codes, authority requirements, and Ellington design standards.
+Identify potential non-compliance issues.
+Flag missing information, inconsistencies, or deviations from standards.
+Generate a structured review summary by drawing, discipline, and severity.
+Support large drawing sets and multiple design stages.
+4.4 Automated Comment Tracking and Compliance Scoring
+Replace the manual process of managing design-review comments.
+Key features:
+Extract comments from reviewed drawings.
+Create a centralised comments tracker.
+Assign comments to consultants or internal owners.
+Track response, closure status, due dates, and evidence.
+Generate a compliance score for each submission.
+Trigger resubmission requests when a defined compliance threshold is not met.
+Support payment-hold workflow triggers where required.
+4.5 Project Launch Data Validation
+Reduce mismatches between official project documents and sales-system information during launch.
+Key features:
+Validate sellable-area schedules before data is uploaded to sales systems.
+Compare surveyor data, approved layouts, sales inventory, and marketing materials.
+Identify mismatches in unit details, area, pricing inputs, parking, and payment-plan data.
+Generate an exception report for correction before project launch.
+Maintain a source-of-truth record for approved launch data.
+4.6 Parking Inventory Management
+Provide visibility and control over extra parking bays used as a sales incentive.
+Key features:
+Track available extra parking bays by project.
+Reserve or allocate parking bays against specific customer bookings.
+Prevent duplicate allocation or over-promising.
+Provide real-time parking availability to Property Consultants.
+Maintain approval and audit history for parking allocations.
+4.7 Post-Contract Decision and RFI Knowledge Base
+Capture historical project decisions after handover to the site team.
+Key features:
+Record RFIs, shop-drawing decisions, approvals, and design clarifications.
+Create a searchable repository of past decisions.
+Link decisions to project, drawing, consultant, and discipline.
+Provide contextual recommendations based on similar historical cases.
+Preserve decision history for future projects and dispute prevention.
+5. Recommended Initial POC Scope
+The recommended first Proof of Concept should focus on the Sales AI Agent, with the following initial capabilities:
+Salesforce lead-summary retrieval.
+Conversational inventory search.
+Sales-offer generation.
+EOI and booking creation assistance.
+Voice agent for lead qualification during non-working hours.
+Salesforce activity logging, call transcripts, and reporting.
